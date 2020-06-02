@@ -1,10 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-import { ExampleComponent } from 'sport-fields'
+import { FootballPitch } from 'sport-fields'
 import 'sport-fields/dist/index.css'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  const [width, setWidth] = useState(500)
+
+  return (
+    <>
+      <div>
+        Change width:{' '}
+        <input
+          id='footballPitchResizer'
+          type='range'
+          min='200'
+          max='1000'
+          value={width}
+          onChange={(e) => setWidth(e.target.value)}
+          onInput={(e) => setWidth(e.target.value)}
+        />
+        {width}px
+      </div>
+      <div style={{ width: `${width}px` }}>
+        <FootballPitch id='footballPitchExample' />
+      </div>
+    </>
+  )
 }
 
 export default App
