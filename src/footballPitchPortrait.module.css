@@ -1,16 +1,4 @@
 .footballPitch {
-  background: url(http://www.transparenttextures.com/patterns/fake-brick.png)
-    repeat #6b220b;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  text-align: center;
-  vertical-align: middle;
-  width: 100%;
-}
-
-.footballPitchGrass {
   background: url(http://www.transparenttextures.com/patterns/pool-table.png)
     repeat green;
   display: inline-block;
@@ -19,7 +7,6 @@
   overflow: hidden;
   padding: 30% 0 100%;
   position: relative;
-  vertical-align: middle;
   width: 100%;
   z-index: 0;
 }
