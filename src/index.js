@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import landscape from './footballPitchLandscape.module.css'
 import portrait from './footballPitchPortrait.module.css'
 
+export const FootballGrass = portrait.footballGrass;
+
 export const FootballPitch = ({ type }) => {
   const styles = type === 'portrait' ? portrait : landscape
 
