@@ -1,6 +1,12 @@
+.footballGrass {
+  background: url(http://www.transparenttextures.com/patterns/pool-table.png)
+    repeat green;
+}
+
 .footballPitch {
   background: url(http://www.transparenttextures.com/patterns/pool-table.png)
     repeat green;
+  box-sizing: content-box;
   display: inline-block;
   height: 100%;
   margin: 0 auto;
