@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import landscape from './footballPitchLandscape.module.css'
-import portrait from './footballPitchPortrait.module.css'
+import utility from './styles/footballPitchUtility.module.scss'
+import landscape from './styles/footballPitchLandscape.module.css'
+import portrait from './styles/footballPitchPortrait.module.scss'
 
-export const FootballGrass = portrait.footballGrass;
+export const FootballGrass = utility.footballGrass
 
 export const FootballPitch = ({ type }) => {
   const styles = type === 'portrait' ? portrait : landscape

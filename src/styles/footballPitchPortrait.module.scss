@@ -1,0 +1,228 @@
+@import 'shared/colors';
+@import 'shared/mixins';
+
+.footballPitch {
+  background: url(http://www.transparenttextures.com/patterns/pool-table.png)
+    repeat $color-grass;
+  box-sizing: content-box;
+  display: inline-block;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 30% 0 100%;
+  position: relative;
+  width: 100%;
+
+  .footballPitchGoalOne,
+  .footballPitchGoalTwo {
+    background: url(http://www.transparenttextures.com/patterns/subtlenet.png)
+      repeat transparent;
+    border: 2px solid $color-chalk;
+    content: '';
+    height: 3%;
+    left: 43%;
+    margin: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 14%;
+  }
+
+  .footballPitchGoalOne {
+    border-bottom: none;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    bottom: 96%;
+  }
+
+  .footballPitchGoalTwo {
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-top: none;
+    top: 96%;
+  }
+
+  .footballPitchSideline {
+    border: 2px solid $color-chalk;
+    bottom: 0;
+    height: 92%;
+    left: 0;
+    margin: auto;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 90%;
+
+    .footballPitchCornerOne {
+      &:before,
+      &:after {
+        border: 2px solid $color-chalk;
+        border-radius: 50%;
+        content: '';
+        height: 0;
+        margin: 0;
+        padding-bottom: 6%;
+        position: absolute;
+        top: -3%;
+        width: 6%;
+      }
+
+      &:before {
+        left: -4%;
+      }
+
+      &:after {
+        right: -4%;
+      }
+    }
+
+    .footballPitchCornerTwo {
+      &:before,
+      &:after {
+        border: 2px solid $color-chalk;
+        border-radius: 50%;
+        bottom: -3%;
+        content: '';
+        height: 0;
+        margin: 0;
+        padding-bottom: 6%;
+        position: absolute;
+        width: 6%;
+      }
+
+      &:before {
+        left: -4%;
+      }
+
+      &:after {
+        right: -4%;
+      }
+    }
+
+    .footballPitchGoalArea {
+      @include fullAbsolute();
+
+      &:before,
+      &:after {
+        border: 2px solid $color-chalk;
+        content: '';
+        height: 6%;
+        left: 35%;
+        position: absolute;
+        width: 30%;
+      }
+
+      &:before {
+        top: -2px;
+      }
+
+      &:after {
+        bottom: -2px;
+      }
+    }
+
+    .footballPitchPenaltyArea {
+      @include fullAbsolute();
+
+      &:before,
+      &:after {
+        border: 2px solid $color-chalk;
+        content: '';
+        height: 18%;
+        left: 20%;
+        position: absolute;
+        width: 60%;
+      }
+
+      &:before {
+        top: -2px;
+      }
+
+      &:after {
+        bottom: -2px;
+      }
+    }
+
+    .footballPitchPenaltySpot {
+      @include fullAbsolute();
+
+      &:before,
+      &:after {
+        background: $color-chalk;
+        border-radius: 50%;
+        content: '';
+        height: 0.8%;
+        left: 49.4%;
+        margin: 0;
+        position: absolute;
+        width: 1.2%;
+      }
+
+      &:before {
+        top: 12%;
+      }
+
+      &:after {
+        bottom: 12%;
+      }
+    }
+
+    .footballPitchArc {
+      @include fullAbsolute();
+
+      &:before,
+      &:after {
+        border: 2px solid $color-chalk;
+        border-radius: 50% / 100%;
+        content: '';
+        height: 4%;
+        left: 38%;
+        position: absolute;
+        width: 24%;
+      }
+
+      &:before {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        top: 18%;
+      }
+
+      &:after {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        bottom: 18%;
+      }
+    }
+
+    .footballPitchHalfwayLine {
+      border: 1px solid $color-chalk;
+      content: '';
+      height: 0;
+      position: absolute;
+      top: calc(50% - 1px);
+      width: 100%;
+
+      &:before {
+        border: 2px solid $color-chalk;
+        border-radius: 50%;
+        content: '';
+        left: calc(40% - 2px);
+        margin-top: -10%;
+        padding-bottom: 20%;
+        position: absolute;
+        width: 20%;
+      }
+    }
+
+    .footballPitchCenterSpot {
+      background: $color-chalk;
+      border-radius: 50%;
+      content: '';
+      height: 1.2%;
+      left: 49.1%;
+      position: absolute;
+      top: 49.4%;
+      width: 1.8%;
+    }
+  }
+}

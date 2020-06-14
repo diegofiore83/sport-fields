@@ -21,8 +21,15 @@ const App = () => {
         />
         {width}px
       </div>
-      <div style={{ width: `${width}px`, display: 'inline-block', margin: '5px' }}>
+      <div
+        style={{ width: `${width}px`, display: 'inline-block', margin: '5px' }}
+      >
         <FootballPitch />
+      </div>
+      <div
+        style={{ width: `${width}px`, display: 'inline-block', margin: '5px' }}
+      >
+        <FootballPitch type="landscape" />
       </div>
     </>
   )
