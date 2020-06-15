@@ -5,7 +5,6 @@ import 'sport-fields/dist/index.css'
 
 const App = () => {
   const [width, setWidth] = useState(500)
-  const [height, setHeight] = useState(500)
 
   return (
     <>
