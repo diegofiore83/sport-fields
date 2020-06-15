@@ -1,13 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import utility from './styles/footballPitchUtility.module.scss'
-import landscape from './styles/footballPitchLandscape.module.css'
-import portrait from './styles/footballPitchPortrait.module.scss'
+import styles from './styles/footballPitchPortrait.module.scss'
 
 export const FootballGrass = utility.footballGrass
 
-export const FootballPitch = ({ type }) => {
-  const styles = type === 'portrait' ? portrait : landscape
+export const FootballPitch = () => {
 
   return (
     <div className={styles.footballPitch}>
@@ -27,10 +25,6 @@ export const FootballPitch = ({ type }) => {
   )
 }
 
-FootballPitch.propTypes = {
-  type: PropTypes.oneOf(['landscape', 'portrait'])
-}
+FootballPitch.propTypes = {}
 
-FootballPitch.defaultProps = {
-  type: 'portrait'
-}
+FootballPitch.defaultProps = {}
