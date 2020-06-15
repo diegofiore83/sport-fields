@@ -1,0 +1,312 @@
+.stage {
+  backface-visibility: hidden;
+  height: 100%;
+  perspective-origin: 50% -200px;
+  perspective: 1100px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+  .world {
+    backface-visibility: hidden;
+    height: 840px;
+    left: 50%;
+    margin-left: -336px;
+    position: absolute;
+    top: 130px;
+    transform: translateY(0px) translateZ(-200px);
+    transform-style: preserve-3d;
+    width: 672px;
+    z-index: 1;
+
+    .terrain {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      transform-style: inherit;
+      width: 100%;
+
+      .field {
+        box-sizing: content-box;
+        backface-visibility: hidden;
+        background-color: #eee;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transform: rotateX(90deg) translateZ(0);
+        transform-origin: 50% 50%;
+        width: 100%;
+        z-index: 2;
+
+        div {
+          box-sizing: border-box;
+        }
+
+        .fieldTexture {
+          height: 100%;
+          position: absolute;
+          width: 100%;
+          z-index: 3;
+        }
+
+        .fieldGradient {
+          background-image: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.2),
+            transparent
+          );
+          z-index: 4;
+        }
+
+        .fieldGrass {
+          background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/215059/grass2.png');
+          background-repeat: repeat;
+          background-size: 75px 75px;
+          background-position: -20px -20px;
+        }
+
+        .fieldLine {
+          height: 3px;
+          position: absolute;
+          width: 100%;
+          z-index: 4;
+        }
+
+        .fieldLineGoalArea {
+          border: solid 3px rgba(255, 255, 255, 0.5);
+          border-bottom: none;
+          bottom: 4%;
+          height: 6%;
+          left: 0;
+          margin: auto;
+          right: 0;
+          width: 20%;
+        }
+
+        .fieldLineGoalAreaFar {
+          border: solid 3px rgba(255, 255, 255, 0.5);
+          border-top: none;
+          bottom: auto;
+          top: 4%;
+        }
+
+        .fieldLineOutline {
+          border: solid 3px rgba(255, 255, 255, 0.5);
+          height: 92%;
+          left: 4%;
+          top: 4%;
+          width: 92%;
+          overflow: hidden;
+
+          .fieldLineCorner {
+            bottom: 0;
+            height: 3%;
+            margin: auto;
+            overflow: hidden;
+            width: 100%;
+  
+            &:before,
+            &:after {
+              border: solid 3px rgba(255, 255, 255, 0.5);
+              border-radius: 50%;
+              box-sizing: border-box;
+              content: '';
+              display: block;
+              height: 100%;
+              position: absolute;
+              width: 3%;
+              bottom: -50%;
+            }
+
+            &:before {
+              left: -1.5%;
+            }
+
+            &:after {
+              right: -1.5%;
+            }
+          }
+
+          .fieldLineCornerFar {
+            bottom: unset;
+            top: 0;
+
+            &:before,
+            &:after {
+              bottom: unset;
+              top: -50%;
+            }
+
+            &:before {
+              left: -1.5%;
+            }
+
+            &:after {
+              right: -1.5%;
+            }
+          }
+        }
+
+        .fieldLinePenaltyArea {
+          border: solid 3px rgba(255, 255, 255, 0.5);
+          border-bottom: none;
+          bottom: 4%;
+          height: 16%;
+          left: 0;
+          margin: auto;
+          right: 0;
+          width: 52%;
+        }
+
+        .fieldLinePenaltyAreaFar {
+          border: solid 3px rgba(255, 255, 255, 0.5);
+          border-top: none;
+          bottom: auto;
+          top: 4%;
+        }
+        
+        .fieldLinePenaltySpot {
+          border: solid 3px rgba(255, 255, 255, 0.5);
+          border-radius: 50%;
+          bottom: 15%;
+          height: 0.6%;
+          left: 0;
+          margin: auto;
+          right: 0;
+          width: 0.6%;
+        }
+
+        .fieldLinePenaltySpotFar {
+          bottom: auto;
+          top: 15%;
+        }
+
+        .fieldLinePenaltyArc {
+          bottom: 20%;
+          height: 20%;
+          left: 0;
+          margin: auto;
+          overflow: hidden;
+          right: 0;
+          width: 20%;
+
+          &:after {
+            border: solid 3px rgba(255, 255, 255, 0.5);
+            border-bottom: none;
+            border-radius: 50% 50% 0 0;
+            box-sizing: border-box;
+            content: '';
+            display: block;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 75%;
+            width: 100%;
+          }
+        }
+
+        .fieldLinePenaltyArcFar {
+          bottom: auto;
+          top: 20%;
+
+          &:after {
+            border: solid 3px rgba(255, 255, 255, 0.5);
+            border-top: none;
+            border-radius: 0 0 50% 50%;
+            bottom: 75%;
+            top: auto;
+          }
+        }
+
+        .fieldLineMid {
+          background-color: rgba(255, 255, 255, 0.5);
+          left: 4%;
+          top: 50%;
+          width: 92%;
+        }
+
+        .fieldLineCircle {
+          border: solid 3px rgba(255, 255, 255, 0.5);
+          border-radius: 50%;
+          bottom: 0;
+          height: 18%;
+          left: 0;
+          margin: auto;
+          right: 0;
+          top: 0;
+          width: 18%;
+        }
+        
+        .fieldLineCircleSpot {
+          border: solid 3px rgba(255, 255, 255, 0.5);
+          border-radius: 50%;
+          bottom: 0;
+          height: 0.8%;
+          left: 0;
+          margin: auto;
+          right: 0;
+          top: 0;
+          width: 0.8%;
+        }
+      }
+
+      .fieldAlt {
+        background: #000;
+        box-shadow: 0 0 40px 30px #000;
+        display: block;
+        left: 10%;
+        opacity: 0.3;
+        transform: rotateX(90deg) translateZ(-10px);
+        width: 80%;
+      }
+
+      .fieldSide {
+        background-color: #000;
+        height: 8px;
+        left: 0;
+        position: absolute;
+        top: 420px;
+        transform: rotateX(180deg) translateZ(-420px);
+        transform-origin: 50% 50%;
+        width: 100%;
+        z-index: 9;
+
+        &:after {
+          background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/215059/mud.png');
+          background-position: -20px -20px;
+          background-repeat: repeat;
+          background-size: 75px 75px;
+          content: '';
+          bottom: 0;
+          left: 0;
+          opacity: 0.55;
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+      }
+
+      .fieldSideLeft,
+      .fieldSideRight {
+        height: 100%;
+        left: -8px;
+        top: 0;
+        transform-origin: 100% 50%;
+        transform: rotateX(90deg) rotateY(-90deg) translateZ(0);
+        width: 8px;
+      }
+
+      .fieldSideLeft {
+        left: auto;
+        right: 0;
+      }
+
+      .fieldSideBack {
+        transform: rotateX(180deg) translateZ(420px);
+      }
+    }
+  }
+}
